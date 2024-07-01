@@ -1,16 +1,16 @@
 package com.example.androidassignments.RecyclerViews
 
 import android.content.Context
-import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidassignments.R
 
-class LinearRvAdapter(private val dataSet:Array<LinearRvModel>):
+class LinearRvAdapter(private val dataSet:Array<LinearRvModel>,private val context: Context):
     RecyclerView.Adapter<LinearRvAdapter.ViewHolder>(){
 
     class ViewHolder(view: View):RecyclerView.ViewHolder(view) {
@@ -27,18 +27,22 @@ class LinearRvAdapter(private val dataSet:Array<LinearRvModel>):
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LinearRvAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view=LayoutInflater.from(parent.context)
-            .inflate(R.layout.activity_linear_rv,parent,false)
+            .inflate(R.layout.linear_rv_item,parent,false)
 
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: LinearRvAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.imgView.setImageResource(dataSet[position].imgSrc)
         holder.titleView.setText(dataSet[position].titleSrc)
         holder.descripView.setText(dataSet[position].descriptionSrc)
         holder.dateView.setText(dataSet[position].dateSrc)
+        val text=holder.dateView.text.toString()
+        holder.dateView.setOnClickListener{
+            Toast.makeText(context, "$text", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun getItemCount()=dataSet.size
