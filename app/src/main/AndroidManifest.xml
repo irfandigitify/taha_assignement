@@ -13,18 +13,27 @@
         android:theme="@style/Theme.AndroidAssignments"
         tools:targetApi="31">
         <activity
-            android:name=".Navigtions.NavActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:name=".AppBars.NavigationDrawer.DrawerActivity"
+            android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
         <activity
-            android:name=".Fragments.FragmentActivity"
+            android:name=".AppBars.BottomBar.BottomBarActivity"
             android:exported="true">
         </activity>
+        <activity
+            android:name=".AppBars.TabBar.TabBarActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".Navigtions.NavActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Fragments.FragmentActivity"
+            android:exported="true" />
         <activity
             android:name=".RecyclerViews.LinearRvActivity"
             android:exported="true" />
