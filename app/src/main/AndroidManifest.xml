@@ -13,32 +13,45 @@
         android:theme="@style/Theme.AndroidAssignments"
         tools:targetApi="31">
         <activity
-            android:name=".RecyclerViews.LinearRvActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:name=".AppBars.NavigationDrawer.DrawerActivity"
+            android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
+        <activity
+            android:name=".AppBars.BottomBar.BottomBarActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".AppBars.TabBar.TabBarActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".Navigtions.NavActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Fragments.FragmentActivity"
+            android:exported="true" />
+        <activity
+            android:name=".RecyclerViews.LinearRvActivity"
+            android:exported="true" />
         <activity
             android:name=".EventListeners.EventListener2Activity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".EventListeners.EventListener1Activity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ConstraintLayouts.EditTextLayoutActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ConstraintLayouts.ButtonsLayoutActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>
