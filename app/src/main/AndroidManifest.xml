@@ -13,7 +13,10 @@
         android:theme="@style/Theme.AndroidAssignments"
         tools:targetApi="31">
         <activity
-            android:name=".RecyclerViews.StaggeredRV.StaggeredRvActivity"
+            android:name=".Bindings.bindingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".counterApp.CounterAppActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,12 +25,14 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".RecyclerViews.StaggeredRV.StaggeredRvActivity"
+            android:exported="true" />
+        <activity
             android:name=".AppBars.NavigationDrawer.DrawerActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".AppBars.BottomBar.BottomBarActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".AppBars.TabBar.TabBarActivity"
             android:exported="true" />
