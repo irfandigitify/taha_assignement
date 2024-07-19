@@ -1,8 +1,12 @@
+import com.android.build.api.dsl.Packaging
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("androidx.navigation.safeargs")
+    id("kotlin-kapt")
+    id("com.google.devtools.ksp")
 }
-
 android {
     namespace = "com.example.androidassignments"
     compileSdk = 34
@@ -18,6 +22,7 @@ android {
     }
     buildFeatures{
         viewBinding= true
+        dataBinding= true
     }
     buildTypes {
         release {
@@ -35,6 +40,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    packagingOptions {
+        resources.excludes.add("META-INF/androidx.cardview_cardview.version")
+    }
 }
 
 dependencies {
@@ -44,7 +53,22 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.cardview.v7)
+    annotationProcessor(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
 }
