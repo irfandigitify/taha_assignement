@@ -15,9 +15,21 @@
         android:theme="@style/Theme.AndroidAssignments"
         tools:targetApi="31">
         <activity
-            android:name=".binding.inputDataBinding.InputActivity"
-            android:exported="true" >
+            android:name=".savedCredentials.SplashScreenActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity
+            android:name=".savedCredentials.SavedCredentialsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AndroidAssignments" />
+        <activity
+            android:name=".binding.inputDataBinding.InputActivity"
+            android:exported="true" />
         <activity
             android:name=".NetworkAndAPI.UserActivity"
             android:exported="true" />
@@ -29,20 +41,13 @@
             android:exported="false" />
         <activity
             android:name=".dataPersistence.CourseActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".UIpractice.BindingsActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".binding.counterApp.CounterAppActivity"
-            android:exported="true" >
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".RecyclerViews.StaggeredRV.StaggeredRvActivity"
             android:exported="true" />
